@@ -4,6 +4,8 @@ import { jwtVerify } from "jose"
 export async function middleware(request){
     const token = await request.headers.get("Authorization")?.split(" ")[1]
 
+    //const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imxia0BlbWFpbC5jb20iLCJleHAiOjE3NTc0ODMxOTN9.odskrLTdWMRA5isyJT2KcE072k1-RrMMf8ZA6da7Hgo"
+
     if(!token){
         return NextResponse.json({message: "No token available"})
     }
