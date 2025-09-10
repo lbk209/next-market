@@ -23,7 +23,7 @@ export async function POST(request){
                                         .setProtectedHeader({alg: "HS256"})
                                         .setExpirationTime("1d")
                                         .sign(secretKey)
-                console.log(token) 
+                //console.log(token) 
                 return NextResponse.json({message: "로그인 성공", token: token})
             }else{
                 // 비밀번호가 올바르지 않을 때의 처리
